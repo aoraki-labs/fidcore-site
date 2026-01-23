@@ -11,7 +11,7 @@ const solutions = [
     description:
       'High performance and cost effective computing capacity for ZK and FHE networks.',
     icon: Server,
-    specs: ['Heterogeneous Acceleration', 'Elastic Scale'],
+    specs: ['Hybrid GPU & ASIC Acceleration', 'Elastic Scale'],
     gradient: 'from-cyan-glow/20 to-electric-blue/20',
     borderColor: 'border-cyan-glow/30',
     iconBg: 'bg-cyan-glow/10',
