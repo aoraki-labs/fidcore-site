@@ -90,7 +90,7 @@ export default function Navbar() {
                 </a>
                 {social.href.startsWith('mailto:') && copied && (
                   <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white">
-                    已复制邮箱
+                    Email copied
                   </div>
                 )}
               </div>
@@ -138,7 +138,7 @@ export default function Navbar() {
                   </a>
                   {social.href.startsWith('mailto:') && copied && (
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white">
-                      已复制邮箱
+                      Email copied
                     </div>
                   )}
                 </div>
