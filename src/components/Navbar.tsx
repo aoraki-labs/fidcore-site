@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Menu, X, Github, MessageCircle, BookOpen, Mail } from 'lucide-react'
-import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
 // Custom X icon component
@@ -32,6 +31,13 @@ const socialLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const [copied, setCopied] = useState(false)
+
+  const handleMailClick = (email: string) => {
+    navigator.clipboard.writeText(email.replace('mailto:', ''))
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
 
   return (
     <motion.nav
@@ -72,15 +78,22 @@ export default function Navbar() {
           {/* Social Links - Right */}
           <div className="w-[432px] hidden md:flex md:items-center md:justify-end md:space-x-4">
             {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.href}
-                {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
-                className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 transition-colors hover:text-cyan-glow"
-                aria-label={social.name}
-              >
-                <social.icon className="h-6 w-6" />
-              </a>
+              <div key={social.name} className="relative">
+                <a
+                  href={social.href}
+                  {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                  onClick={social.href.startsWith('mailto:') ? () => handleMailClick(social.href) : undefined}
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 transition-colors hover:text-cyan-glow"
+                  aria-label={social.name}
+                >
+                  <social.icon className="h-6 w-6" />
+                </a>
+                {social.href.startsWith('mailto:') && copied && (
+                  <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white">
+                    已复制邮箱
+                  </div>
+                )}
+              </div>
             ))}
           </div>
 
@@ -113,15 +126,22 @@ export default function Navbar() {
             ))}
             <div className="flex space-x-4 pt-4">
               {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.href}
-                  {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
-                  className="text-gray-400 hover:text-cyan-glow"
-                  aria-label={social.name}
-                >
-                  <social.icon className="h-5 w-5" />
-                </a>
+                <div key={social.name} className="relative">
+                  <a
+                    href={social.href}
+                    {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
+                    onClick={social.href.startsWith('mailto:') ? () => handleMailClick(social.href) : undefined}
+                    className="text-gray-400 hover:text-cyan-glow"
+                    aria-label={social.name}
+                  >
+                    <social.icon className="h-5 w-5" />
+                  </a>
+                  {social.href.startsWith('mailto:') && copied && (
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white">
+                      已复制邮箱
+                    </div>
+                  )}
+                </div>
               ))}
             </div>
           </motion.div>
