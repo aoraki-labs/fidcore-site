@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Menu, X, Github, MessageCircle, BookOpen } from 'lucide-react'
+import { Menu, X, Github, MessageCircle, BookOpen, Mail } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 
@@ -27,6 +27,7 @@ const socialLinks = [
   { name: 'X', icon: XIcon, href: 'https://x.com/zk_pool' },
   { name: 'Discord', icon: MessageCircle, href: 'https://discord.gg/PUkc9BhfcT' },
   { name: 'Paragraph', icon: BookOpen, href: 'https://paragraph.com/@aoraki-labs' },
+  { name: 'Contact', icon: Mail, href: 'mailto:hello@aoraki-labs.io' },
 ]
 
 export default function Navbar() {
