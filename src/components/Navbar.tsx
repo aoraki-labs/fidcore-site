@@ -23,11 +23,11 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { name: 'GitHub', icon: Github, href: 'https://github.com/aoraki-labs' },
-  { name: 'X', icon: XIcon, href: 'https://x.com/zk_pool' },
-  { name: 'Discord', icon: MessageCircle, href: 'https://discord.gg/PUkc9BhfcT' },
-  { name: 'Paragraph', icon: BookOpen, href: 'https://paragraph.com/@aoraki-labs' },
-  { name: 'Contact', icon: Mail, href: 'mailto:hello@aoraki-labs.io' },
+  { name: 'GitHub', icon: Github, href: 'https://github.com/aoraki-labs', external: true },
+  { name: 'X', icon: XIcon, href: 'https://x.com/zk_pool', external: true },
+  { name: 'Discord', icon: MessageCircle, href: 'https://discord.gg/PUkc9BhfcT', external: true },
+  { name: 'Paragraph', icon: BookOpen, href: 'https://paragraph.com/@aoraki-labs', external: true },
+  { name: 'Contact', icon: Mail, href: 'mailto:hello@aoraki-labs.io', external: false },
 ]
 
 export default function Navbar() {
@@ -75,8 +75,7 @@ export default function Navbar() {
               <a
                 key={social.name}
                 href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
                 className="flex h-10 w-10 items-center justify-center rounded-lg text-gray-400 transition-colors hover:text-cyan-glow"
                 aria-label={social.name}
               >
@@ -117,8 +116,7 @@ export default function Navbar() {
                 <a
                   key={social.name}
                   href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  {...(social.external && { target: '_blank', rel: 'noopener noreferrer' })}
                   className="text-gray-400 hover:text-cyan-glow"
                   aria-label={social.name}
                 >
