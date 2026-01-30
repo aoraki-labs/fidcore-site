@@ -127,7 +127,7 @@ export default function Team() {
             <p className="mt-4 text-lg leading-8 text-gray-400">
               A team of cryptography experts, hardware engineers, and distributed
               systems architects. Building the physical infrastructure for
-              verifiable confidential computing with world-class partners.
+              verifiable computing with world-class partners.
             </p>
           </motion.div>
 

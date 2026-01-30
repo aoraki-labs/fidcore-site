@@ -21,7 +21,7 @@ export default function Footer() {
 
           {/* Description */}
           <p className="max-w-md text-center text-sm leading-6 text-gray-400">
-            The premier infrastructure for verifiable confidential computing.
+            The premier infrastructure for verifiable computing.
           </p>
 
           {/* Copyright */}
