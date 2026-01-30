@@ -140,7 +140,7 @@ export default function Hero() {
             <p>
               The premier infrastructure for{' '}
               <span className="font-semibold text-white">
-                Verifiable Confidential Computing (VCC)
+                Verifiable Computing (VC)
               </span>.
             </p>
             <p className="mt-2">

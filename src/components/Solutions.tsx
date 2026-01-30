@@ -20,7 +20,7 @@ const solutions = [
   },
   {
     tag: 'For Developers',
-    title: 'VCC Cloud Platform',
+    title: 'VC Cloud Platform',
     description:
       'A unified acceleration API. Submit requests easily and get proofs fast.',
     icon: Cloud,

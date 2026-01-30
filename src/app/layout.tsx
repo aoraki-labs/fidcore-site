@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'FidCore | Verifiable Confidential Computing Infrastructure',
+  title: 'FidCore | Verifiable Computing Infrastructure',
   description:
-    'The premier infrastructure for Verifiable Confidential Computing (VCC). Powering ZK protocols and Private AI agents with specialized silicon.',
+    'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
   keywords: [
-    'VCC',
-    'Verifiable Confidential Computing',
+    'VC',
+    'Verifiable Computing',
     'ZK',
     'Zero Knowledge',
     'FHE',
@@ -19,17 +19,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'FidCore' }],
   openGraph: {
-    title: 'FidCore | Verifiable Confidential Computing Infrastructure',
+    title: 'FidCore | Verifiable Computing Infrastructure',
     description:
-      'The premier infrastructure for Verifiable Confidential Computing (VCC). Powering ZK protocols and Private AI agents with specialized silicon.',
+      'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
     type: 'website',
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FidCore | Verifiable Confidential Computing Infrastructure',
+    title: 'FidCore | Verifiable Computing Infrastructure',
     description:
-      'The premier infrastructure for Verifiable Confidential Computing (VCC). Powering ZK protocols and Private AI agents with specialized silicon.',
+      'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
   },
 }
 
