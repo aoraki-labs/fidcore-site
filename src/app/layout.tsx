@@ -4,7 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'FidCore | Verifiable Computing Infrastructure',
   description:
-    'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
+    'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
   keywords: [
     'VC',
     'Verifiable Computing',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'FidCore | Verifiable Computing Infrastructure',
     description:
-      'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
+      'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
     type: 'website',
     locale: 'en_US',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'FidCore | Verifiable Computing Infrastructure',
     description:
-      'The premier infrastructure for Verifiable Computing (VC). Powering ZK protocols and Private AI agents with specialized silicon.',
+      'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
   },
 }
 

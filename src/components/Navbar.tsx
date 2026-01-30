@@ -23,7 +23,7 @@ const navLinks = [
 
 const socialLinks = [
   { name: 'GitHub', icon: Github, href: 'https://github.com/aoraki-labs', external: true },
-  { name: 'X', icon: XIcon, href: 'https://x.com/zk_pool', external: true },
+  { name: 'X', icon: XIcon, href: 'https://x.com/fidcore_zk', external: true },
   { name: 'Discord', icon: MessageCircle, href: 'https://discord.gg/PUkc9BhfcT', external: true },
   { name: 'Paragraph', icon: BookOpen, href: 'https://paragraph.com/@aoraki-labs', external: true },
   { name: 'Contact', icon: Mail, href: 'mailto:hello@aoraki-labs.io', external: false },

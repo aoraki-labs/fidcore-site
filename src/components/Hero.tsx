@@ -140,11 +140,11 @@ export default function Hero() {
             <p>
               The premier infrastructure for{' '}
               <span className="font-semibold text-white">
-                Verifiable Computing (VC)
+                Verifiable Computing
               </span>.
             </p>
             <p className="mt-2">
-              Powering ZK protocols and Private AI agents with specialized silicon.
+              Powering ZK protocols and Private AI agents with GPU/ASIC.
             </p>
           </motion.div>
 

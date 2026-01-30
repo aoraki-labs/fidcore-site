@@ -20,7 +20,7 @@ const solutions = [
   },
   {
     tag: 'For Developers',
-    title: 'VC Cloud Platform',
+    title: 'Verifiable Computing Cloud Platform',
     description:
       'A unified acceleration API. Submit requests easily and get proofs fast.',
     icon: Cloud,
