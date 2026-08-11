@@ -1,35 +1,44 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Server, Cloud } from 'lucide-react'
+import { Radio, Cpu, ArrowRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-const solutions = [
+type Status = { label: string; tone: 'live' | 'dev' }
+
+const products = [
   {
-    tag: 'For Protocols',
-    title: 'Genesis Compute Provider',
+    tag: 'The inference layer',
+    title: 'fidrouter',
     description:
-      'High performance and cost effective computing capacity for ZK and FHE networks.',
-    icon: Server,
-    specs: ['Hybrid GPU & ASIC Acceleration', 'Elastic Scale'],
+      'A verifiable, no-log LLM relay. Prove every model call ran inside the exact published, no-log code — before you send a prompt. Keep your OpenAI client; just point base_url.',
+    icon: Radio,
+    specs: ['TEE remote attestation', 'Operator-blind BYOK', 'Signed, content-free receipts'],
+    status: { label: 'Live', tone: 'live' } as Status,
+    cta: { label: 'Verify it', href: 'https://app.fidcore.xyz' },
     gradient: 'from-cyan-glow/20 to-electric-blue/20',
     borderColor: 'border-cyan-glow/30',
     iconBg: 'bg-cyan-glow/10',
     iconColor: 'text-cyan-glow',
-    comingSoon: false,
   },
   {
-    tag: 'For Developers',
-    title: 'Verifiable Computing Cloud Platform',
+    tag: 'The action layer',
+    title: 'FidCore AgentBox',
     description:
-      'A unified acceleration API. Submit requests easily and get proofs fast.',
-    icon: Cloud,
-    specs: ['Zero-DevOps', 'Smart Orchestration'],
+      'Hardware-backed secure execution for autonomous agents. The agent runs on-device; private keys never leave the secure chip; on-chain actions are ZK-bounded so it cannot exceed its limits.',
+    icon: Cpu,
+    specs: [
+      'Secure element / ASIC (Intchains)',
+      'ZK Software-Defined Keys (Psy)',
+      'On-device inference + proving',
+      'Non-bypassable policy',
+    ],
+    status: { label: 'In development', tone: 'dev' } as Status,
+    cta: { label: 'Talk to us', href: 'mailto:hello@aoraki-labs.io' },
     gradient: 'from-electric-blue/20 to-purple-500/20',
     borderColor: 'border-electric-blue/30',
     iconBg: 'bg-electric-blue/10',
     iconColor: 'text-electric-blue',
-    comingSoon: true,
   },
 ]
 
@@ -40,14 +49,37 @@ const fadeInUp = {
   transition: { duration: 0.6 },
 }
 
-function SolutionCard({
-  solution,
+function StatusPill({ status }: { status: Status }) {
+  const tone =
+    status.tone === 'live'
+      ? 'bg-green-500/10 border-green-500/30 text-green-400'
+      : 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400'
+  return (
+    <span
+      className={cn(
+        'inline-flex items-center gap-1.5 rounded-full border px-3 py-1 font-mono text-xs uppercase tracking-wider',
+        tone
+      )}
+    >
+      <span
+        className={cn(
+          'h-1.5 w-1.5 rounded-full',
+          status.tone === 'live' ? 'bg-green-400' : 'bg-yellow-400'
+        )}
+      />
+      {status.label}
+    </span>
+  )
+}
+
+function ProductCard({
+  product,
   index,
 }: {
-  solution: (typeof solutions)[0]
+  product: (typeof products)[0]
   index: number
 }) {
-  const Icon = solution.icon
+  const Icon = product.icon
 
   return (
     <motion.div
@@ -57,71 +89,72 @@ function SolutionCard({
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ y: -4 }}
       className={cn(
-        'group relative rounded-2xl p-8',
+        'group relative flex flex-col rounded-2xl p-8',
         'border border-border-subtle',
         'bg-background-card/60 backdrop-blur-xl',
-        'transition-all duration-300',
-        'hover:border-opacity-50',
-        solution.borderColor
+        'transition-all duration-300 hover:border-opacity-50',
+        product.borderColor
       )}
     >
-      {/* Gradient Background */}
       <div
         className={cn(
           'absolute inset-0 rounded-2xl opacity-0 transition-opacity duration-300',
           'bg-gradient-to-br',
-          solution.gradient,
+          product.gradient,
           'group-hover:opacity-100'
         )}
       />
 
-      {/* Content */}
-      <div className="relative z-10">
-        {/* Tag */}
-        <div className="flex items-center justify-between">
+      <div className="relative z-10 flex flex-1 flex-col">
+        {/* Tag + status */}
+        <div className="flex items-center justify-between gap-3">
           <span className="inline-flex items-center rounded-full border border-border-subtle bg-background/50 px-3 py-1 font-mono text-xs uppercase tracking-wider text-gray-400">
-            {solution.tag}
+            {product.tag}
           </span>
-          {solution.comingSoon && (
-            <span className="inline-flex items-center rounded-full bg-yellow-500/10 border border-yellow-500/30 px-3 py-1 font-mono text-xs uppercase tracking-wider text-yellow-400">
-              Coming Soon
-            </span>
-          )}
+          <StatusPill status={product.status} />
         </div>
 
         {/* Icon */}
-        <div
-          className={cn(
-            'mt-6 inline-flex items-center justify-center rounded-xl p-3',
-            solution.iconBg
-          )}
-        >
-          <Icon className={cn('h-6 w-6', solution.iconColor)} />
+        <div className={cn('mt-6 inline-flex w-fit items-center justify-center rounded-xl p-3', product.iconBg)}>
+          <Icon className={cn('h-6 w-6', product.iconColor)} />
         </div>
 
         {/* Title */}
-        <h3 className="mt-4 text-xl font-bold tracking-tight text-white sm:text-2xl">
-          {solution.title}
+        <h3 className="mt-4 text-2xl font-bold tracking-tight text-white">
+          {product.title}
         </h3>
 
         {/* Description */}
         <p className="mt-3 text-base leading-7 text-gray-400">
-          {solution.description}
+          {product.description}
         </p>
 
         {/* Specs */}
         <div className="mt-6 space-y-2">
-          {solution.specs.map((spec, specIndex) => (
-            <div
-              key={specIndex}
-              className="flex items-center space-x-3 font-mono text-sm"
-            >
-              <div className={cn('h-1 w-1 rounded-full', solution.iconColor)} />
-              <span className="uppercase tracking-wider text-gray-300">
-                {spec}
-              </span>
+          {product.specs.map((spec, i) => (
+            <div key={i} className="flex items-center space-x-3 font-mono text-sm">
+              <div className={cn('h-1 w-1 rounded-full', product.iconColor)} />
+              <span className="uppercase tracking-wider text-gray-300">{spec}</span>
             </div>
           ))}
+        </div>
+
+        {/* CTA */}
+        <div className="mt-8 pt-2">
+          <a
+            href={product.cta.href}
+            {...(product.cta.href.startsWith('http')
+              ? { target: '_blank', rel: 'noopener noreferrer' }
+              : {})}
+            className={cn(
+              'inline-flex items-center gap-2 font-semibold transition-colors',
+              product.iconColor,
+              'hover:opacity-80'
+            )}
+          >
+            {product.cta.label}
+            <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </div>
     </motion.div>
@@ -130,25 +163,25 @@ function SolutionCard({
 
 export default function Solutions() {
   return (
-    <section id="solutions" className="relative py-12 sm:py-16">
-      {/* Background Grid */}
+    <section id="products" className="relative py-16 sm:py-20">
       <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-20" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div {...fadeInUp} className="mx-auto max-w-2xl text-center">
           <span className="font-mono text-sm uppercase tracking-[0.2em] text-cyan-glow">
-            Infrastructure
+            Products
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Our Solutions
+            Two layers of verifiable agents
           </h2>
+          <p className="mt-4 text-lg leading-8 text-gray-400">
+            Verify the reasoning, and verify the action.
+          </p>
         </motion.div>
 
-        {/* Solutions Grid */}
-        <div className="mt-16 grid gap-8 lg:grid-cols-2">
-          {solutions.map((solution, index) => (
-            <SolutionCard key={solution.title} solution={solution} index={index} />
+        <div className="mt-16 grid items-stretch gap-8 lg:grid-cols-2">
+          {products.map((product, index) => (
+            <ProductCard key={product.title} product={product} index={index} />
           ))}
         </div>
       </div>

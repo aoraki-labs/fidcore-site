@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { ShieldCheck, ArrowRight } from 'lucide-react'
 
 function GridBackground() {
   return (
@@ -13,27 +14,13 @@ function GridBackground() {
 
       {/* Animated Glow Orbs */}
       <motion.div
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.3, 0.5, 0.3],
-        }}
-        transition={{
-          duration: 4,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+        animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+        transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-cyan-glow/10 blur-3xl"
       />
       <motion.div
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.2, 0.4, 0.2],
-        }}
-        transition={{
-          duration: 5,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
+        animate={{ scale: [1.2, 1, 1.2], opacity: [0.2, 0.4, 0.2] }}
+        transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-electric-blue/10 blur-3xl"
       />
 
@@ -51,7 +38,6 @@ function GridBackground() {
           </linearGradient>
         </defs>
 
-        {/* Horizontal Lines */}
         {[200, 300, 400].map((y, i) => (
           <motion.line
             key={`h-${i}`}
@@ -67,7 +53,6 @@ function GridBackground() {
           />
         ))}
 
-        {/* Vertical Lines */}
         {[300, 500, 700].map((x, i) => (
           <motion.line
             key={`v-${i}`}
@@ -83,7 +68,6 @@ function GridBackground() {
           />
         ))}
 
-        {/* Connection Nodes */}
         {[
           { cx: 300, cy: 200 },
           { cx: 500, cy: 300 },
@@ -115,18 +99,31 @@ export default function Hero() {
     <section id="vision" className="relative overflow-hidden pt-24">
       <GridBackground />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-12 sm:py-16">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 py-14 sm:py-20">
         <div className="mx-auto max-w-4xl text-center">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mb-6 flex justify-center"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full border border-border-subtle bg-background/50 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.18em] text-cyan-glow">
+              <ShieldCheck className="h-3.5 w-3.5" />
+              Verifiable Agent Infrastructure
+            </span>
+          </motion.div>
+
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-3xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl whitespace-nowrap"
+            className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
-            Scaling Trust.{' '}
+            Don&apos;t trust agents.{' '}
             <span className="bg-gradient-to-r from-cyan-glow to-electric-blue bg-clip-text text-transparent">
-              Securing Privacy.
+              Verify them.
             </span>
           </motion.h1>
 
@@ -135,19 +132,40 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="mt-6 text-lg leading-8 text-gray-400 sm:text-xl"
+            className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-400 sm:text-xl"
           >
             <p>
-              The premier infrastructure for{' '}
-              <span className="font-semibold text-white">
-                Verifiable Computing
-              </span>.
-            </p>
-            <p className="mt-2">
-              Powering ZK protocols and Private AI agents with GPU/ASIC.
+              AI agents now move money, call tools, and touch your data on their
+              own. FidCore makes what they do{' '}
+              <span className="font-semibold text-white">provable</span> —
+              hardware attestation for the code that ran, zero-knowledge proofs
+              for the bounds it ran within.
             </p>
           </motion.div>
 
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4"
+          >
+            <a
+              href="https://app.fidcore.xyz"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-2 rounded-xl bg-cyan-glow px-6 py-3 font-semibold text-background transition-all hover:shadow-[0_0_30px_rgba(0,240,255,0.35)]"
+            >
+              Verify a live relay
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+            </a>
+            <a
+              href="#products"
+              className="inline-flex items-center gap-2 rounded-xl border border-border-subtle bg-background/50 px-6 py-3 font-semibold text-white transition-colors hover:border-cyan-glow/40 hover:text-cyan-glow"
+            >
+              Explore products
+            </a>
+          </motion.div>
         </div>
       </div>
 

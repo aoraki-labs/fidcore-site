@@ -1,35 +1,42 @@
 import type { Metadata } from 'next'
 import './globals.css'
 
+const title = 'FidCore | Verifiable Agent Infrastructure'
+const description =
+  "The trust substrate for autonomous AI agents. Hardware attestation proves the code that ran; zero-knowledge proofs bound what it's allowed to do."
+
 export const metadata: Metadata = {
-  title: 'FidCore | Verifiable Computing Infrastructure',
-  description:
-    'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
+  metadataBase: new URL('https://fidcore.xyz'),
+  title,
+  description,
   keywords: [
-    'VC',
-    'Verifiable Computing',
+    'Verifiable Agent Infrastructure',
+    'AI agents',
+    'agent wallet',
+    'TEE',
+    'Confidential Computing',
+    'Intel TDX',
+    'remote attestation',
+    'zero knowledge',
     'ZK',
-    'Zero Knowledge',
-    'FHE',
-    'Fully Homomorphic Encryption',
-    'Web3',
-    'Infrastructure',
-    'Cryptography',
-    'Privacy',
+    'no-log LLM relay',
+    'fidrouter',
+    'AgentBox',
   ],
   authors: [{ name: 'FidCore' }],
+  icons: { icon: '/logos/fidcore-square.png', apple: '/logos/fidcore-square.png' },
   openGraph: {
-    title: 'FidCore | Verifiable Computing Infrastructure',
-    description:
-      'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
+    title,
+    description,
     type: 'website',
     locale: 'en_US',
+    images: ['/logos/fidcore-square.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'FidCore | Verifiable Computing Infrastructure',
-    description:
-      'The premier infrastructure for Verifiable Computing. Powering ZK protocols and Private AI agents with GPU/ASIC.',
+    title,
+    description,
+    images: ['/logos/fidcore-square.png'],
   },
 }
 

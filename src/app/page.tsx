@@ -1,8 +1,9 @@
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
-import SocialProof from '@/components/SocialProof'
 import Solutions from '@/components/Solutions'
+import TrustLayers from '@/components/TrustLayers'
 import TechStack from '@/components/TechStack'
+import SocialProof from '@/components/SocialProof'
 import Team from '@/components/Team'
 import Footer from '@/components/Footer'
 
@@ -12,19 +13,22 @@ export default function Home() {
       {/* Navigation */}
       <Navbar />
 
-      {/* Hero Section */}
+      {/* Hero — the thesis */}
       <Hero />
 
-      {/* Solutions / Products */}
+      {/* Products — fidrouter + FidCore AgentBox */}
       <Solutions />
 
-      {/* Social Proof / Partners */}
-      <SocialProof />
+      {/* How it works — the two proofs (TEE + ZK) */}
+      <TrustLayers />
 
-      {/* Technology Stack / Advantages */}
+      {/* Why FidCore — pillars incl. compute foundation */}
       <TechStack />
 
-      {/* Team / Company */}
+      {/* Partners — built with / powering */}
+      <SocialProof />
+
+      {/* Company */}
       <Team />
 
       {/* Footer */}

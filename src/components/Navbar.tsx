@@ -16,8 +16,9 @@ function XIcon({ className }: { className?: string }) {
 
 const navLinks = [
   { name: 'Vision', href: '#vision' },
-  { name: 'Solutions', href: '#solutions' },
-  { name: 'Technology', href: '#technology' },
+  { name: 'Products', href: '#products' },
+  { name: 'How it works', href: '#trust' },
+  { name: 'Partners', href: '#partners' },
   { name: 'Company', href: '#company' },
 ]
 

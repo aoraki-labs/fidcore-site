@@ -104,7 +104,7 @@ function DataCenterVisual() {
       {/* Label */}
       <div className="absolute bottom-4 left-4 right-4">
         <span className="font-mono text-xs uppercase tracking-wider text-gray-600">
-          Global Infrastructure
+          Verifiable compute · the foundation
         </span>
       </div>
     </div>
@@ -125,9 +125,9 @@ export default function Team() {
               Engineered by Experts
             </h2>
             <p className="mt-4 text-lg leading-8 text-gray-400">
-              A team of cryptography experts, hardware engineers, and distributed
-              systems architects. Building the physical infrastructure for
-              verifiable computing with world-class partners.
+              Cryptography, hardware, and systems engineers building the trust
+              substrate for autonomous agents — from silicon to proof. A
+              ZPrize-winning team, with world-class partners.
             </p>
           </motion.div>
 

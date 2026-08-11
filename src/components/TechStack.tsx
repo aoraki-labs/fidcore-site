@@ -1,32 +1,36 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Cpu, Award, Handshake, Server } from 'lucide-react'
+import { ShieldCheck, KeyRound, FileCode2, Server } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
 const advantages = [
   {
-    icon: Cpu,
-    title: 'High Performance GPU Capacity',
-    description: 'Thousands of GPU machines with RTX 5090/4090, delivering high performance and cost-effective computing power.',
+    icon: ShieldCheck,
+    title: 'Hardware-rooted trust',
+    description:
+      'Intel TDX / Confidential Space and Intchains secure elements anchor every guarantee in silicon — attested to the hardware root, not our word.',
     color: 'cyan',
   },
   {
-    icon: Award,
-    title: 'ZPrize Award-Winning Team',
-    description: 'ZK-optimized computing capabilities from a team recognized with ZPrize awards for cryptographic acceleration.',
+    icon: KeyRound,
+    title: 'Zero-knowledge bounded',
+    description:
+      "Psy Software-Defined Keys encode an agent's limits into its very identity, so out-of-bounds actions can't be signed at all.",
     color: 'electric',
   },
   {
-    icon: Handshake,
-    title: 'ASIC Customization Capability',
-    description: 'Custom ASIC computing power through strategic partnership with advanced ASIC vendors for specialized workloads.',
+    icon: FileCode2,
+    title: 'Open & reproducible',
+    description:
+      'The verifiable core is open-source and reproducibly built, so anyone can confirm the running code is the published, no-log code.',
     color: 'purple',
   },
   {
     icon: Server,
-    title: 'Proven Operations Experience',
-    description: 'Professional and extensive experience in operating large-scale computing clusters at production level.',
+    title: 'Built on our own compute',
+    description:
+      'A ZPrize-winning team and our GPU/ASIC capacity — the verifiable-compute foundation that powers it all.',
     color: 'green',
   },
 ]
@@ -90,7 +94,6 @@ function AdvantageCard({
       )}
     >
       <div className="flex flex-col">
-        {/* Icon */}
         <div
           className={cn(
             'w-12 h-12 rounded-xl flex items-center justify-center mb-4',
@@ -99,11 +102,7 @@ function AdvantageCard({
         >
           <Icon className={cn('h-6 w-6', colors.text)} />
         </div>
-
-        {/* Title */}
         <h3 className="text-lg font-bold text-white mb-2">{advantage.title}</h3>
-
-        {/* Description */}
         <p className="text-sm text-gray-400 leading-relaxed">
           {advantage.description}
         </p>
@@ -114,8 +113,7 @@ function AdvantageCard({
 
 export default function TechStack() {
   return (
-    <section id="technology" className="relative py-24 sm:py-32 overflow-hidden">
-      {/* Background Elements */}
+    <section id="why" className="relative py-24 sm:py-32 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-grid-pattern bg-grid opacity-10" />
         <div className="absolute top-1/2 left-0 w-96 h-96 -translate-y-1/2 -translate-x-1/2 rounded-full bg-cyan-glow/5 blur-3xl" />
@@ -123,17 +121,15 @@ export default function TechStack() {
       </div>
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
-        {/* Section Header */}
         <motion.div {...fadeInUp} className="text-center mb-16">
           <span className="font-mono text-sm uppercase tracking-[0.2em] text-cyan-glow">
-            Why Choose Us
+            Why FidCore
           </span>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Our Advantages
+            Verifiable, top to bottom
           </h2>
         </motion.div>
 
-        {/* Advantages Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {advantages.map((advantage, index) => (
             <AdvantageCard key={advantage.title} advantage={advantage} index={index} />
