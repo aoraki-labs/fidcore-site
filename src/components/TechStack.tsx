@@ -9,14 +9,14 @@ const advantages = [
     icon: ShieldCheck,
     title: 'Hardware-rooted trust',
     description:
-      'Intel TDX / Confidential Space and Intchains secure elements anchor every guarantee in silicon — attested to the hardware root, not our word.',
+      'Intel TDX / Confidential Space plus secure elements from hardware partners like Intchains anchor every guarantee in silicon — vendor-agnostic, attested to the hardware root.',
     color: 'cyan',
   },
   {
     icon: KeyRound,
-    title: 'Zero-knowledge bounded',
+    title: 'Policy as cryptography',
     description:
-      "Psy Software-Defined Keys encode an agent's limits into its very identity, so out-of-bounds actions can't be signed at all.",
+      "Our policy engine encodes each agent's limits so out-of-bounds actions can't be signed. Zero-knowledge backends (Psy today) plug in — pluggable, not locked.",
     color: 'electric',
   },
   {

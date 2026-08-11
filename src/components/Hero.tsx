@@ -151,19 +151,17 @@ export default function Hero() {
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
             <a
-              href="https://app.fidcore.xyz"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#products"
               className="group inline-flex items-center gap-2 rounded-xl bg-cyan-glow px-6 py-3 font-semibold text-background transition-all hover:shadow-[0_0_30px_rgba(0,240,255,0.35)]"
             >
-              Verify a live relay
+              Explore products
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
             </a>
             <a
-              href="#products"
+              href="mailto:hello@aoraki-labs.io?subject=FidCore%20%E2%80%94%20hello"
               className="inline-flex items-center gap-2 rounded-xl border border-border-subtle bg-background/50 px-6 py-3 font-semibold text-white transition-colors hover:border-cyan-glow/40 hover:text-cyan-glow"
             >
-              Explore products
+              Talk to us
             </a>
           </motion.div>
         </div>

@@ -67,6 +67,9 @@ export default function SocialProof() {
               </motion.div>
             ))}
           </div>
+          <p className="mt-5 text-xs text-gray-500">
+            Vendor layers are pluggable — Psy and Intchains today, more partners to come.
+          </p>
         </div>
 
         {/* Powering */}

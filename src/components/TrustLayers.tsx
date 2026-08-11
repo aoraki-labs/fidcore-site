@@ -17,7 +17,7 @@ const layers = [
     eyebrow: 'What it may do',
     title: 'Bounded behavior',
     description:
-      'With Psy Software-Defined Keys, an out-of-policy transaction is mathematically unable to produce a valid signature. The policy is the identity — no key to steal, no admin to override, no prompt injection that gets past it.',
+      "Our policy engine turns each agent's limits into cryptographic constraints, enforced by a zero-knowledge backend (Psy today, pluggable). An out-of-policy action can't produce a valid signature at all — no key to steal, no admin to override, no prompt injection that gets past it.",
     icon: KeyRound,
     accent: 'electric' as const,
   },
@@ -55,10 +55,10 @@ export default function TrustLayers() {
 
       <div className="relative mx-auto max-w-6xl px-6 lg:px-8">
         <motion.div {...fadeInUp} className="mx-auto max-w-2xl text-center">
-          <span className="font-mono text-sm uppercase tracking-[0.2em] text-cyan-glow">
+          <span className="whitespace-nowrap font-mono text-sm uppercase tracking-[0.2em] text-cyan-glow">
             How it works
           </span>
-          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             Two proofs behind every agent
           </h2>
           <p className="mt-4 text-lg leading-8 text-gray-400">
